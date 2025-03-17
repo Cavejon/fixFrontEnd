@@ -4,15 +4,768 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-    <link href="./output.css" rel="stylesheet">
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+    <link rel="stylesheet" href="./src/styles/homePage.css">
     <title>Fixação Front-End</title>
 </head>
 
 <body>
-    <h1 class="text-3xl font-bold underline">
-        Hello world!
-    </h1>
+
+    <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar"
+        type="button"
+        class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+        <span class="sr-only">Open sidebar</span>
+        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path clip-rule="evenodd" fill-rule="evenodd"
+                d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z">
+            </path>
+        </svg>
+    </button>
+
+    <aside id="logo-sidebar"
+        class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+        aria-label="Sidebar">
+        <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+            <a href="#" class="flex items-center ps-2.5 mb-5">
+                <svg class="h-6 me-3 sm:h-7" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 200 200">
+                    <rect x="50" y="40" width="100" height="80" rx="15" fill="#3B82F6" />
+                    <circle cx="80" cy="70" r="10" fill="#FFFFFF" />
+                    <circle cx="120" cy="70" r="10" fill="#FFFFFF" />
+                    <circle cx="80" cy="70" r="5" fill="#111827" />
+                    <circle cx="120" cy="70" r="5" fill="#111827" />
+                    <rect x="75" y="95" width="50" height="8" rx="4" fill="#FFFFFF" />
+                    <line x1="100" y1="40" x2="100" y2="20" stroke="#3B82F6" stroke-width="6" />
+                    <circle cx="100" cy="15" r="8" fill="#EF4444" />
+                    <rect x="60" y="120" width="80" height="50" rx="10" fill="#3B82F6" />
+                </svg>
+                <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Projeto Bot</span>
+            </a>
+            <ul class="space-y-2 font-medium">
+                <li>
+                    <a href="#"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <svg class="shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 18 18">
+                            <path
+                                d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z" />
+                        </svg>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/pedrolcavejon/"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <svg class="shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z" />
+                        </svg>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Linkedin</span>
+                        <span
+                            class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">New</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/Cavejon"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <svg class="shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                        </svg>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Github</span>
+                        <span
+                            class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">New</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://tailwindcss.com/docs/installation/tailwind-cli"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <svg class="shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path
+                                d="M19 2.5A2.5 2.5 0 0 0 16.5 0h-13A2.5 2.5 0 0 0 1 2.5v15A2.5 2.5 0 0 0 3.5 20h13a2.5 2.5 0 0 0 2.5-2.5v-15ZM3.5 2h13a.5.5 0 0 1 .5.5v9h-4.744a1 1 0 0 0-.949.684L10.5 14.5l-.807-2.316a1 1 0 0 0-.949-.684H4V2.5a.5.5 0 0 1 .5-.5Zm13 16h-13a.5.5 0 0 1-.5-.5V14h4.5l.807 2.316a1 1 0 0 0 .949.684.996.996 0 0 0 .949-.684L11 14h5.5v3.5a.5.5 0 0 1-.5.5Z" />
+                        </svg>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Documentação</span>
+                        <span
+                            class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">New</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <svg class="shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z" />
+                        </svg>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Tecnologias</span>
+                        <span
+                            class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">New</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full p-4  flex justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 100 100">
+                <path fill="#1d1d1b"
+                    d="M68.5,26h3c0.276,0,0.5-0.224,0.5-0.5v-3c0-0.276-0.224-0.5-0.5-0.5h-3c-0.276,0-0.5,0.224-0.5,0.5v3	C68,25.776,68.224,26,68.5,26z">
+                </path>
+                <path fill="none" stroke="#1d1d1b" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"
+                    d="M38,87v-4h-4v-4h-4v-4h-4v-8	h-4v-4h-9.5c-2.206,0-4-1.794-4-4v-6c0-2.206,1.794-4,4-4H22V37h4v-8h4v-4h4v-4h4v-4h16v-4h19v4h4v4h4v4h4v10H58v10h4v-4h15v4h4v4	h3.303l10.5,7l-10.5,7H81v12h-4v4h-4v4h-4v4H38z M65,77v-4h4v-4h4v-6h-8v4h-9v-4H36v6h4v4h7v4H65z M52,45v-6h-4v6H52v5 M42,49V39h-4	v4h-2v6H42z">
+                </path>
+                <line x1="62.5" x2="62.5" y1="32.5" y2="34.5" fill="none" stroke="#1d1d1b" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-miterlimit="10"></line>
+                <polyline fill="none" stroke="#1d1d1b" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-miterlimit="10" points="54.5,17 54.5,21.5 58.5,21.5 58.5,25.5 62.5,25.5 62.5,29.5">
+                </polyline>
+                <line x1="58" x2="52" y1="38.5" y2="38.5" fill="none" stroke="#1d1d1b" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-miterlimit="10"></line>
+                <line x1="42.5" x2="35.5" y1="53.5" y2="53.5" fill="none" stroke="#1d1d1b" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-miterlimit="10"></line>
+                <line x1="52.5" x2="47.5" y1="53.5" y2="53.5" fill="none" stroke="#1d1d1b" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-miterlimit="10"></line>
+                <line x1="73.5" x2="60.5" y1="53.5" y2="53.5" fill="none" stroke="#1d1d1b" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-miterlimit="10"></line>
+                <line x1="78.5" x2="76.5" y1="53.5" y2="53.5" fill="none" stroke="#1d1d1b" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-miterlimit="10"></line>
+                <line x1="84.5" x2="80.5" y1="53.5" y2="53.5" fill="none" stroke="#1d1d1b" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-miterlimit="10"></line>
+                <line x1="81" x2="73" y1="62.5" y2="62.5" fill="none" stroke="#1d1d1b" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-miterlimit="10"></line>
+                <line x1="81" x2="73" y1="66.5" y2="66.5" fill="none" stroke="#1d1d1b" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-miterlimit="10"></line>
+                <line x1="36" x2="26" y1="66.5" y2="66.5" fill="none" stroke="#1d1d1b" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-miterlimit="10"></line>
+                <polyline fill="none" stroke="#1d1d1b" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-miterlimit="10" points="43.5,25.5 43.5,30 47.5,30 47.5,39"></polyline>
+                <line x1="34" x2="40.5" y1="25.5" y2="25.5" fill="none" stroke="#1d1d1b" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-miterlimit="10"></line>
+                <line x1="22.5" x2="22.5" y1="49" y2="63" fill="none" stroke="#1d1d1b" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-miterlimit="10"></line>
+                <line x1="35.5" x2="35.5" y1="49" y2="63" fill="none" stroke="#1d1d1b" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-miterlimit="10"></line>
+                <polyline fill="none" stroke="#1d1d1b" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-miterlimit="10" points="42.5,73 42.5,77.5 38.5,77.5 38.5,79.5"></polyline>
+                <line x1="18.5" x2="18.5" y1="49" y2="63" fill="none" stroke="#1d1d1b" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-miterlimit="10"></line>
+                <polyline fill="none" stroke="#1d1d1b" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-miterlimit="10"
+                    points="42.5,49 42.5,58.5 47.5,58.5 47.5,49.5 52.5,49.5 52.5,58.5 56.5,58.5 56.5,63.5"></polyline>
+                <line x1="14.5" x2="14.5" y1="55.5" y2="63" fill="none" stroke="#1d1d1b" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-miterlimit="10"></line>
+                <line x1="14.5" x2="14.5" y1="49" y2="52.5" fill="none" stroke="#1d1d1b" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-miterlimit="10"></line>
+                <line x1="18.5" x2="22.5" y1="53.5" y2="53.5" fill="none" stroke="#1d1d1b" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-miterlimit="10"></line>
+                <line x1="32.5" x2="36" y1="42.5" y2="42.5" fill="none" stroke="#1d1d1b" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-miterlimit="10"></line>
+                <line x1="22" x2="29.5" y1="42.5" y2="42.5" fill="none" stroke="#1d1d1b" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-miterlimit="10"></line>
+                <polyline fill="none" stroke="#1d1d1b" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-miterlimit="10" points="60.5,45.5 60.5,62.5 65,62.5"></polyline>
+                <polyline fill="none" stroke="#1d1d1b" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-miterlimit="10" points="81,49.5 64.5,49.5 64.5,53.5"></polyline>
+                <line x1="84.5" x2="84.5" y1="49" y2="62.5" fill="none" stroke="#1d1d1b" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-miterlimit="10"></line>
+                <line x1="88.5" x2="88.5" y1="51.5" y2="60" fill="none" stroke="#1d1d1b" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-miterlimit="10"></line>
+                <polyline fill="none" stroke="#1d1d1b" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-miterlimit="10" points="65.5,76.5 65.5,82.5 69,82.5"></polyline>
+            </svg>
+        </div>
+    </aside>
+
+
+    <div class="p-4 sm:ml-64 mt-4 mb-4">
+        <section class="bg-white dark:bg-gray-900">
+            <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
+                <h1
+                    class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+                    Cadastro de Usuário</h1>
+                <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">Lorem
+                    Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s.</p>
+            </div>
+        </section>
+
+
+        <!-- Conteúdo principal com margem para a sidebar -->
+
+        <!-- Conteudo dos cards abaixos-->
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+            <!-- Card 1 -->
+            <div class="max-w-full card-estrutura">
+                <div class="relative flex flex-col text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
+                    <div style="background-color: #d00000;"
+                        class="relative grid mx-4 mb-6 -mt-6 overflow-hidden text-white shadow-lg h-28 place-items-center rounded-xl">
+                        <h3
+                            class="block font-sans text-3xl antialiased font-semibold leading-snug tracking-normal text-white">
+                            Informações Pessoais</h3>
+                    </div>
+                    <div class="flex flex-col gap-5 p-6">
+                        <div class="space-y-1">
+                            <label for="nome" class="block text-sm font-medium text-gray-700">Nome Completo</label>
+                            <input id="nome inputClean"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="Digite seu nome completo" />
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="dataNascimento" class="block text-sm font-medium text-gray-700">Data de
+                                Nascimento</label>
+                            <input datepicker id="dataNascimento inputClean" type="text"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="DD/MM/AAAA">
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="generos" class="block text-sm font-medium text-gray-700">Sexo</label>
+                            <select id="generos"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all appearance-none bg-white">
+                                <option value="" disabled selected>Selecione uma opção</option>
+                                <option value="mas">Masculino</option>
+                                <option value="fem">Feminino</option>
+                                <option value="non">Não Informar</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="cpf" class="block text-sm font-medium text-gray-700">CPF</label>
+                            <input id="cpf inputClean"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="000.000.000-00" />
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="rg" class="block text-sm font-medium text-gray-700">RG</label>
+                            <input id="rg inputClean"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="00.000.000-0" />
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="estadoCivil" class="block text-sm font-medium text-gray-700">Estado
+                                Civil</label>
+                            <select id="estadoCivil"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all appearance-none bg-white">
+                                <option value="" disabled selected>Selecione uma opção</option>
+                                <option value="solteiro">Solteiro(a)</option>
+                                <option value="casado">Casado(a)</option>
+                                <option value="divorciado">Divorciado(a)</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="photo" class="block text-sm font-medium text-gray-700">Foto de Perfil</label>
+                            <input type="file" id="photo inputClean"
+                                class="w-full px-4 py-3 text-sm text-gray-600 border border-gray-300 rounded-lg leading-6 file:bg-red-600 file:text-white file:font-semibold file:border-none file:px-4 file:py-2 file:mr-4 file:rounded-md hover:file:bg-red-700 transition-all">
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="assinatura" class="block text-sm font-medium text-gray-700">Assinatura
+                                Digital</label>
+                            <input type="file" id="assinatura inputClean"
+                                class="w-full px-4 py-3 text-sm text-gray-600 border border-gray-300 rounded-lg leading-6 file:bg-red-600 file:text-white file:font-semibold file:border-none file:px-4 file:py-2 file:mr-4 file:rounded-md hover:file:bg-red-700 transition-all">
+                        </div>
+                    </div>
+                    <div class="p-6 pt-2">
+                        <button onclick="cleanInputs()" style="background-color: #ffd60a;"
+                            class="block w-full py-3 mb-3 px-6  text-white font-medium rounded-lg hover:bg-blue-700 transition-all shadow-md">Limpar</button>
+                        <button style="background-color: #70e000;"
+                            class="block w-full py-3 px-6  text-white font-medium rounded-lg hover:bg-blue-700 transition-all shadow-md">Enviar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="max-w-full card-estrutura">
+                <div class="relative flex flex-col text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
+                    <div class="relative grid mx-4 mb-6 -mt-6 overflow-hidden text-white shadow-lg h-28 place-items-center rounded-xl "
+                        style="background-color: #d00000;">
+                        <h3
+                            class="block font-sans text-3xl antialiased font-semibold leading-snug tracking-normal text-white">
+                            Contato</h3>
+                    </div>
+                    <div class="flex flex-col gap-5 p-6">
+                        <div class="space-y-1">
+                            <label for="email" class="block text-sm font-medium text-gray-700">E-mail</label>
+                            <input id="email inputClean" type="email"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="seu.email@exemplo.com" />
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="telefone" class="block text-sm font-medium text-gray-700">Telefone</label>
+                            <input id="telefone inputClean" type="tel"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="(00) 0000-0000" />
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="celular" class="block text-sm font-medium text-gray-700">Celular</label>
+                            <input id="celular inputClean" type="tel"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="(00) 00000-0000" />
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="endereco" class="block text-sm font-medium text-gray-700">Endereço</label>
+                            <input id="endereco inputClean"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="Rua, número, bairro" />
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="cep" class="block text-sm font-medium text-gray-700">CEP</label>
+                            <input id="cep inputClean"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="00000-000" />
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="pais" class="block text-sm font-medium text-gray-700">País</label>
+                            <select id="pais"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all appearance-none bg-white">
+                                <option value="" disabled selected>Selecione um país</option>
+                                <option value="brasil">Brasil</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-2">
+                        <button onclick="cleanInputs()" style="background-color: #ffd60a;"
+                            class="block w-full py-3 mb-3 px-6  text-white font-medium rounded-lg hover:bg-blue-700 transition-all shadow-md">Limpar</button>
+                        <button style="background-color: #70e000;"
+                            class="block w-full py-3 px-6  text-white font-medium rounded-lg hover:bg-blue-700 transition-all shadow-md">Enviar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="max-w-full card-estrutura">
+                <div class="relative flex flex-col text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
+                    <div class="relative grid mx-4 mb-6 -mt-6 overflow-hidden text-white shadow-lg h-28 place-items-center rounded-xl"
+                        style="background-color: #d00000;">
+                        <h3
+                            class="block font-sans text-3xl antialiased font-semibold leading-snug tracking-normal text-white">
+                            Cadastro de Usuário
+                        </h3>
+                    </div>
+                    <div class="flex flex-col gap-5 p-6">
+                        <!-- Nome de Usuário -->
+                        <div class="space-y-1">
+                            <label for="username" class="block text-sm font-medium text-gray-700">Nome de
+                                Usuário</label>
+                            <input id="username inputClean"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="Ex: joao.silva123">
+                        </div>
+
+                        <!-- Senha -->
+                        <div class="space-y-1">
+                            <label for="password" class="block text-sm font-medium text-gray-700">Senha</label>
+                            <input id="password inputClean" type="password"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="••••••••••••">
+                        </div>
+
+                        <!-- Confirmação de Senha -->
+                        <div class="space-y-1">
+                            <label for="confirmPassword" class="block text-sm font-medium text-gray-700">Confirmação de
+                                Senha</label>
+                            <input id="confirmPassword inputClean" type="password"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="••••••••••••">
+                        </div>
+
+                        <!-- Pergunta Secreta -->
+                        <div class="space-y-1">
+                            <label for="secretQuestion" class="block text-sm font-medium text-gray-700">Pergunta
+                                Secreta</label>
+                            <select id="secretQuestion"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all appearance-none bg-white">
+                                <option value="" disabled selected>Selecione uma opção</option>
+                                <option value="nome_mae">Qual é o nome da sua mãe?</option>
+                                <option value="animal_infancia">Qual era o nome do seu animal de estimação na infância?
+                                </option>
+                                <option value="cidade_nascimento">Em qual cidade você nasceu?</option>
+                            </select>
+                        </div>
+
+                        <!-- Resposta Secreta -->
+                        <div class="space-y-1">
+                            <label for="secretAnswer" class="block text-sm font-medium text-gray-700">Resposta
+                                Secreta</label>
+                            <input id="secretAnswer inputClean"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="Resposta para recuperação de conta">
+                        </div>
+
+                        <!-- Aceitação dos Termos -->
+                        <div class="space-y-1">
+                            <div class="flex items-center gap-2">
+                                <input id="terms inputClean" type="checkbox"
+                                    class="w-5 h-5 border border-gray-300 rounded-lg focus:ring-blue-500 transition-all">
+                                <label for="terms" class="text-sm text-gray-700">
+                                    Aceito os <span class="text-blue-600 hover:text-blue-700 cursor-pointer">Termos de
+                                        Uso</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-2">
+                        <button onclick="cleanInputs()" style="background-color: #ffd60a;"
+                            class="block w-full py-3 mb-3 px-6  text-white font-medium rounded-lg hover:bg-blue-700 transition-all shadow-md">Limpar</button>
+                        <button style="background-color: #70e000;"
+                            class="block w-full py-3 px-6 text-white font-medium rounded-lg hover:bg-blue-700 transition-all shadow-md">
+                            Finalizar Cadastro
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- SEÇÃO 3.4: Informações Profissionais -->
+            <div class="max-w-full card-estrutura mt-8">
+                <div class="relative flex flex-col text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
+                    <div style="background-color: #d00000;"
+                        class="relative grid mx-4 mb-6 -mt-6 overflow-hidden text-white shadow-lg h-28 place-items-center rounded-xl">
+                        <h3
+                            class="block font-sans text-3xl antialiased font-semibold leading-snug tracking-normal text-white">
+                            Informações Profissionais
+                        </h3>
+                    </div>
+                    <div class="flex flex-col gap-5 p-6">
+                        <div class="space-y-1">
+                            <label for="ocupacao" class="block text-sm font-medium text-gray-700">Ocupação</label>
+                            <input id="ocupacao inputClean"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="Ex: Desenvolvedor Front-end">
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="empresa" class="block text-sm font-medium text-gray-700">Empresa</label>
+                            <input id="empresa inputClean"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="Nome da empresa">
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="cnpjEmpresa" class="block text-sm font-medium text-gray-700">CNPJ da
+                                Empresa</label>
+                            <input id="cnpjEmpresa inputClean"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="00.000.000/0000-00">
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="cargo" class="block text-sm font-medium text-gray-700">Cargo</label>
+                            <input id="cargo inputClean"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="Ex: Gerente de Marketing">
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="salario" class="block text-sm font-medium text-gray-700">Salário
+                                Aproximado</label>
+                            <input id="salario inputClean" type="number"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="R$ 0,00">
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="dataAdmissao" class="block text-sm font-medium text-gray-700">Data de
+                                Admissão</label>
+                            <input datepicker id="dataAdmissao inputClean" type="text"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="DD/MM/AAAA">
+                        </div>
+                    </div>
+                    <div class="p-6 pt-2">
+                        <button onclick="cleanInputs()" style="background-color: #ffd60a;"
+                            class="block w-full py-3 mb-3 px-6  text-white font-medium rounded-lg hover:bg-blue-700 transition-all shadow-md">Limpar</button>
+                        <button style="background-color: #70e000;"
+                            class="block w-full py-3 px-6 text-white font-medium rounded-lg hover:bg-blue-700 transition-all shadow-md">
+                            Salvar Dados Profissionais
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEÇÃO 3.5: Preferências e Redes Sociais -->
+            <div class="max-w-full card-estrutura mt-8">
+                <div class="relative flex flex-col text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
+                    <div style="background-color: #d00000;"
+                        class="relative grid mx-4 mb-6 -mt-6 overflow-hidden text-white shadow-lg h-28 place-items-center rounded-xl">
+                        <h3
+                            class="block font-sans text-3xl antialiased font-semibold leading-snug tracking-normal text-white">
+                            Preferências e Redes Sociais
+                        </h3>
+                    </div>
+                    <div class="flex flex-col gap-5 p-6">
+                        <div class="space-y-1">
+                            <label for="generoMusical" class="block text-sm font-medium text-gray-700">Gênero Musical
+                                Favorito</label>
+                            <input id="generoMusical inputClean"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="Ex: Rock, Samba, MPB">
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="hobbies" class="block text-sm font-medium text-gray-700">Hobbies</label>
+                            <div class="flex flex-wrap gap-2">
+                                <div class="flex items-center gap-2">
+                                    <input id="futebol inputClean" type="checkbox"
+                                        class="w-5 h-5 border border-gray-300 rounded-lg focus:ring-blue-500 transition-all">
+                                    <label for="futebol" class="text-sm text-gray-700">Futebol</label>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <input id="leitura inputClean" type="checkbox"
+                                        class="w-5 h-5 border border-gray-300 rounded-lg focus:ring-blue-500 transition-all">
+                                    <label for="leitura" class="text-sm text-gray-700">Leitura</label>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <input id="viagens inputClean" type="checkbox"
+                                        class="w-5 h-5 border border-gray-300 rounded-lg focus:ring-blue-500 transition-all">
+                                    <label for="viagens" class="text-sm text-gray-700">Viagens</label>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <input id="musica inputClean" type="checkbox"
+                                        class="w-5 h-5 border border-gray-300 rounded-lg focus:ring-blue-500 transition-all">
+                                    <label for="musica" class="text-sm text-gray-700">Música</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="facebook" class="block text-sm font-medium text-gray-700">Facebook</label>
+                            <input id="facebook inputClean"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="https://facebook.com/seu-perfil">
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="instagram" class="block text-sm font-medium text-gray-700">Instagram</label>
+                            <input id="instagram inputClean"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="https://instagram.com/seu-perfil">
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="linkedin" class="block text-sm font-medium text-gray-700">LinkedIn</label>
+                            <input id="linkedin inputClean"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="https://linkedin.com/in/seu-perfil">
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="notificacoes" class="block text-sm font-medium text-gray-700">Notificações via
+                                E-mail</label>
+                            <div class="flex gap-4">
+                                <div class="flex items-center gap-2">
+                                    <input id="sim inputClean" type="radio" name="notificacoes"
+                                        class="w-5 h-5 border border-gray-300 rounded-lg focus:ring-blue-500 transition-all">
+                                    <label for="sim" class="text-sm text-gray-700">Sim</label>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <input id="nao inputClean" type="radio" name="notificacoes"
+                                        class="w-5 h-5 border border-gray-300 rounded-lg focus:ring-blue-500 transition-all">
+                                    <label for="nao" class="text-sm text-gray-700">Não</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-2">
+                        <button onclick="cleanInputs()" style="background-color: #ffd60a;"
+                            class="block w-full py-3 mb-3 px-6  text-white font-medium rounded-lg hover:bg-blue-700 transition-all shadow-md">Limpar</button>
+                        <button style="background-color: #70e000;"
+                            class="block w-full py-3 px-6  text-white font-medium rounded-lg hover:bg-blue-700 transition-all shadow-md">
+                            Salvar Preferências
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEÇÃO 3.6: Pagamento e Dados Bancários -->
+            <div class="max-w-full card-estrutura mt-8">
+                <div class="relative flex flex-col text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
+                    <div style="background-color: #d00000;"
+                        class="relative grid mx-4 mb-6 -mt-6 overflow-hidden text-white shadow-lg h-28 place-items-center rounded-xl">
+                        <h3
+                            class="block font-sans text-3xl antialiased font-semibold leading-snug tracking-normal text-white">
+                            Pagamento e Dados Bancários
+                        </h3>
+                    </div>
+                    <div class="flex flex-col gap-5 p-6">
+                        <div class="space-y-1">
+                            <label for="cartao" class="block text-sm font-medium text-gray-700">Número do Cartão de
+                                Crédito</label>
+                            <input id="cartao inputClean"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="0000.0000.0000.0000">
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="vencimento" class="block text-sm font-medium text-gray-700">Data de Vencimento
+                                do Cartão</label>
+                            <input datepicker id="vencimento inputClean" type="text"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="MM/AAAA">
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="cvv" class="block text-sm font-medium text-gray-700">Código de Segurança
+                                (CVV)</label>
+                            <input id="cvv inputClean" type="number"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="XXX">
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="banco" class="block text-sm font-medium text-gray-700">Banco</label>
+                            <select id="banco"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all appearance-none bg-white">
+                                <option value="" disabled selected>Selecione um banco</option>
+                                <option value="bb">Banco do Brasil</option>
+                                <option value="caixa">Caixa Econômica Federal</option>
+                                <option value="bradesco">Bradesco</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="agencia" class="block text-sm font-medium text-gray-700">Agência</label>
+                            <input id="agencia inputClean"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="XXXX">
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="conta" class="block text-sm font-medium text-gray-700">Conta Corrente</label>
+                            <input id="conta inputClean"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="XXXXX-X">
+                        </div>
+
+                        <div class="space-y-1">
+                            <label for="tipoConta" class="block text-sm font-medium text-gray-700">Tipo de Conta</label>
+                            <select id="tipoConta"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all appearance-none bg-white">
+                                <option value="" disabled selected>Selecione o tipo</option>
+                                <option value="poupanca">Poupança</option>
+                                <option value="corrente">Corrente</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-2">
+                        <button onclick="cleanInputs()" style="background-color: #ffd60a;"
+                            class="block w-full py-3 mb-3 px-6  text-white font-medium rounded-lg hover:bg-blue-700 transition-all shadow-md">Limpar</button>
+                        <button style="background-color: #70e000;"
+                            class="block w-full py-3 px-6  text-white font-medium rounded-lg hover:bg-blue-700 transition-all shadow-md">
+                            Salvar Dados Bancários
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Card 7 (Full Width) -->
+            <div class="col-span-1 md:col-span-2 max-w-full">
+                <div class="relative flex flex-col text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
+                    <div style="background-color: #d00000;"
+                        class="relative grid mx-4 mb-4 -mt-6 overflow-hidden text-white shadow-lg h-28 place-items-center rounded-xl  bg-clip-border">
+                        <h3
+                            class="block font-sans text-3xl antialiased font-semibold leading-snug tracking-normal text-white">
+                            Outros Recursos
+                        </h3>
+                    </div>
+                    <div class="flex flex-col gap-5 p-6">
+                        <!-- Upload de Documento PDF -->
+                        <div class="space-y-1">
+                            <label for="documento" class="block text-sm font-medium text-gray-700">Upload de Documento
+                                PDF</label>
+                            <input type="file" id="documento"
+                                class="w-full px-4 py-3 text-sm text-gray-600 border border-gray-300 rounded-lg leading-6 file:bg-red-600 file:text-white file:font-semibold file:border-none file:px-4 file:py-2 file:mr-4 file:rounded-md hover:file:bg-red-700 transition-all">
+                        </div>
+
+                        <!-- Controle deslizante para aceitar termos -->
+                        <div class="space-y-1">
+                            <div class="flex items-center gap-2">
+                                <label for="termos" class="text-sm text-gray-700">Aceito os termos de uso</label>
+                                <input id="termos inputClean" type="checkbox"
+                                    class="w-5 h-5 border border-gray-300 rounded-lg focus:ring-blue-500 transition-all">
+                            </div>
+                        </div>
+
+                        <!-- Horário de Preferência para Contato -->
+                        <div class="space-y-1">
+                            <label for="horario" class="block text-sm font-medium text-gray-700">Horário de Preferência
+                                para Contato</label>
+                            <input id="horario inputClean" type="time"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="HH:MM">
+                        </div>
+
+                        <!-- Número de Dependentes -->
+                        <div class="space-y-1">
+                            <label for="dependentes" class="block text-sm font-medium text-gray-700">Número de
+                                Dependentes</label>
+                            <input id="dependentes inputClean" type="number"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="0">
+                        </div>
+
+                        <!-- Cor Favorita -->
+                        <div class="space-y-1">
+                            <label for="cor" class="block text-sm font-medium text-gray-700">Cor Favorita</label>
+                            <input id="cor" type="color"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all">
+                        </div>
+
+                        <!-- Comentários ou Observações -->
+                        <div class="space-y-1">
+                            <label for="comentarios" class="block text-sm font-medium text-gray-700">Comentários ou
+                                Observações</label>
+                            <textarea id="comentarios" rows="4"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all"
+                                placeholder="Digite suas observações aqui..."></textarea>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-2">
+                        <button onclick="cleanInputs()" style="background-color: #ffd60a;"
+                            class="block w-full py-3 mb-3 px-6  text-white font-medium rounded-lg hover:bg-blue-700 transition-all shadow-md">Limpar</button>
+                        <button style="background-color: #70e000;"
+                            class="block w-full py-3 px-6  text-white font-medium rounded-lg hover:bg-blue-700 transition-all shadow-md">
+                            Finalizar Cadastro
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="bg-white rounded-lg shadow-sm dark:bg-gray-900 m-4">
+            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+            <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a
+                    href="https://flowbite.com/" class="hover:underline">Project Bot</a>. All Rights Reserved.</span>
+        </footer>
+
+        <script src="./src/js/masks.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.8/inputmask.min.js"></script>
+        <script src="./src/js/cleanForm.js"></script>
+        <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+
 </body>
 
 </html>
