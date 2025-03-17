@@ -23,3 +23,14 @@ Antes de começar, certifique-se de ter instalado:
 1. **Clone o repositório**:
    ```bash
    git clone https://github.com/Cavejon/fixFrontEnd.git
+
+2. **Entre no diretório do projeto**:
+  cd fixFrontEnd
+4. **Instale as dependências**:
+  npm install
+6. **Inicie o servidor de desenvolvimento**:
+   npm start
+8. **Acesse no navegador: Abra o navegador e acesse**:
+   ```bash
+   http://localhost:3000
+📄 Licença Este projeto está sob a licença MIT. Consulte o arquivo LICENSE para mais informações.
